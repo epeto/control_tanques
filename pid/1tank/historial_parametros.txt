@@ -1,0 +1,6 @@
+1: (elegidos por mí)
+    kp=5, ki=2, kd=0
+2: (pid tuner, para la función de transferencia)
+    kp = 1.06160780544721, ki = 0.0301450518137457, kd = -2.20023657471152, N = 0.101769399037611
+3: (otra vez pid tuner pero cambiando az=1 -> az=0.5)
+    kp = 0.73979, ki = 0.01351, kd = 1.07916, N = 0.05171

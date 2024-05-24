@@ -1,0 +1,5 @@
+Cómo crear un ambiente:
+https://la.mathworks.com/help/reinforcement-learning/ug/water-tank-simulink-reinforcement-learning-environment.html
+
+Como crear y entrenar un agente:
+https://la.mathworks.com/help/reinforcement-learning/ug/create-simulink-environment-and-train-agent.html
