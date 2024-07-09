@@ -42,3 +42,4 @@ figure(1);
 plotmf(ts, 'input', 1);
 figure(2);
 plotfis(ts);
+

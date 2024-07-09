@@ -11,16 +11,19 @@ grid on;
 xlabel('tiempo (s)');
 ylabel('altura (cm)');
 legend('H*', 'H');
+title('Altura');
 
 figure(2)
 plot(error(1,:), zeros(size(error(1,:))), error(1,:), error(2,:)*100, 'linewidth', 1.5);
 grid on;
 xlabel('tiempo (s)');
 ylabel('error (cm)');
+title('Error sin perturbación');
 
 figure(3)
-plot(flujo(1,:), flujo(2,:)*1000, 'linewidth',1.5);
+plot(flujo(1,:), flujo(2,:)*1000, 'linewidth', 1.5);
 grid on;
 xlabel('tiempo (s)');
 ylabel('flujo (mL/s)');
+title('Flujo');
 
