@@ -42,7 +42,7 @@ pos2 = ((max_height2 - H_star2) / H_star2)*100;
 disp("Percent overshoot1: "+pos2);
 disp("Ess2: "+ess2);
 
-st2 = settling_time(5, H_star2, te, error2);
+st2 = settling_time(2, H_star2, te, error2);
 disp("Settling time2 " + st2);
 
 % recibe: el porcentaje, el valor de referencia, el arreglo del tiempo y el
