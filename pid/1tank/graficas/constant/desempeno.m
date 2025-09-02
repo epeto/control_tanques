@@ -28,6 +28,15 @@ disp("Ess: "+ess);
 st = settling_time(2, H_star, te, errores);
 disp("Settling time " + st);
 
+% se calcula el rango del error después del tiempo de asentamiento
+cota_superior = -1;
+cota_inferior = 1;
+for i=1:l_e
+    if te(i) > st
+        disp(errores(i));
+    end
+end
+
 % recibe: el porcentaje, el valor de referencia, el arreglo del tiempo y el
 % arreglo del error
 function st = settling_time(per, ref, time, error)

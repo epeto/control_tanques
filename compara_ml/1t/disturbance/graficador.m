@@ -1,6 +1,8 @@
 
 clear all;
 
+resized = [680, 458, 280, 210];
+
 % Errores
 error_predictive = load("error_predictive.mat", "error");
 error_predictive = error_predictive.("error");
@@ -10,10 +12,10 @@ error_rl = error_rl.("error");
 
 figure(2)
 plot(error_predictive(1,:), zeros(size(error_predictive(1,:))), error_predictive(1,:), error_predictive(2,:)*100, ...
-    error_rl(1,:), error_rl(2,:)*100, 'linewidth', 1.5);
+    error_rl(1,:), error_rl(2,:)*100, 'linewidth', 1);
 grid on;
 xlabel('tiempo (s)');
 ylabel('error (cm)');
 legend('0', 'Predictivo', 'Refuerzo');
-title('Error con perturbación: comparación');
-
+title('Error c/p: comparación');
+set(gcf, 'Position', resized);

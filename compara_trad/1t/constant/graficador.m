@@ -1,6 +1,8 @@
 
 clear all;
 
+resized = [680, 458, 280, 210];
+
 % Alturas
 altura_pid = load("altura_pid.mat", "altura");
 altura_pid = altura_pid.("altura");
@@ -13,12 +15,13 @@ altura_fuzzy = altura_fuzzy.("altura");
 
 figure(1)
 plot(altura_pid(1,:), altura_pid(3,:)*100, altura_pid(1,:), altura_pid(2,:)*100, altura_expert(1,:), altura_expert(3,:)*100, ...
-    altura_fuzzy(1,:), altura_fuzzy(3,:)*100, 'linewidth', 1.5);
+    altura_fuzzy(1,:), altura_fuzzy(3,:)*100, 'linewidth', 1);
 grid on;
 xlabel('tiempo (s)');
-ylabel('altura (cm)');
+ylabel('nivel (cm)');
 legend('Referencia', 'PID', 'Experto', 'Borroso');
-title('Altura: comparación');
+title('Niveles: comparación');
+set(gcf, 'Position', resized);
 
 % Errores
 error_pid = load("error_pid.mat", "error");
@@ -32,12 +35,13 @@ error_fuzzy = error_fuzzy.("error");
 
 figure(2)
 plot(error_pid(1,:), zeros(size(error_pid(1,:))), error_pid(1,:), error_pid(2,:)*100, error_expert(1,:), error_expert(2,:)*100, ...
-    error_fuzzy(1,:), error_fuzzy(2,:)*100, 'linewidth', 1.5);
+    error_fuzzy(1,:), error_fuzzy(2,:)*100, 'linewidth', 1);
 grid on;
 xlabel('tiempo (s)');
 ylabel('error (cm)');
 legend('0', 'PID', 'Experto', 'Borroso');
-title('Error sin perturbación: comparación');
+title('Error s/p: comparación');
+set(gcf, 'Position', resized);
 
 % Flujos
 flujo_pid = load("flujo_pid.mat", "flujo");
@@ -51,10 +55,11 @@ flujo_fuzzy = flujo_fuzzy.("flujo");
 
 figure(3)
 plot(flujo_pid(1,:), flujo_pid(2,:)*1000, flujo_expert(1,:), flujo_expert(2,:)*1000, ...
-    flujo_fuzzy(1,:), flujo_fuzzy(2,:)*1000, 'linewidth', 1.5);
+    flujo_fuzzy(1,:), flujo_fuzzy(2,:)*1000, 'linewidth', 1);
 grid on;
 xlabel('tiempo (s)');
 ylabel('flujo (mL/s)');
 legend('PID', 'Experto', 'Borroso');
 title('Flujo: comparación');
+set(gcf, 'Position', resized);
 
